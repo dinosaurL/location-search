@@ -32,15 +32,16 @@ const LocationSearch = ( { onPlaceClick } : LocationSearchProps) => {
         <div>
         {/* <form>  */}
         <form onSubmit={handleSubmit}>
-            <label className='font-bold p-2' htmlFor='term'>Search</label>
+            <label className='font-bold p-4' htmlFor='term'>Search</label>
             <input className='border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 px-4 py-2 w-full' 
                 id='term' type='string' 
                 value={term}
             onChange={handleChange}
         />
         </form>
-        <div className='font-bold mt-6'> Found locations:</div>
+        
         {places.length > 0 && <div>
+            <div className='font-bold mt-6'>Found locations:</div>
             {places.map((place) => <div key={place.id} className='p-4 font-light flex flex-row items-center justify-between'>
                 <span className='mr-4 text-sm'>{place.name}</span>
                 <button className='p-1 h-8 bg-blue-500 text-xs text-white rounded-md'

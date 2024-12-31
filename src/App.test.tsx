@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-// import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react'
 import App from './App'
 // import Map from './components/Map';
@@ -11,8 +10,11 @@ describe('App', () => {
     render(<App />)
 
    // screen.debug(); // prints out the jsx in the App component unto the command line
-    console.log('simon:---', expect);
+
     expect(screen.getByLabelText('Search')).toBeInTheDocument();
-    // expect(Map).toHaveBeenCalled();
+    expect(screen.queryByText('Found locations:')).toBe(null);
+    const locateButtons = screen.queryByText('locate', { selector: 'button' });
+    expect(locateButtons).toBe(null);
+
   })
 })
