@@ -12,9 +12,9 @@ describe('App', () => {
    // screen.debug(); // prints out the jsx in the App component unto the command line
 
     expect(screen.getByLabelText('Search')).toBeInTheDocument();
-    expect(screen.queryByText('Found locations:')).toBe(null);
+    expect(screen.queryByText('Found locations:')).toBeNull();
     const locateButtons = screen.queryByText('locate', { selector: 'button' });
-    expect(locateButtons).toBe(null);
+    expect(locateButtons).toBeNull();
 
   })
 })
