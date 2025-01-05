@@ -9,12 +9,12 @@ describe('App', () => {
   it('renders the App component', () => {
     render(<App />)
 
-   // screen.debug(); // prints out the jsx in the App component unto the command line
-
     expect(screen.getByLabelText('Search')).toBeInTheDocument();
     expect(screen.queryByText('Found locations:')).toBeNull();
     const locateButtons = screen.queryByText('locate', { selector: 'button' });
     expect(locateButtons).toBeNull();
 
+    expect(screen.getByRole('button',  { name: 'Zoom in', } )).toBeInTheDocument();
+    expect(screen.getByRole('button',  { name: 'Zoom out', } )).toBeInTheDocument();
   })
 })
